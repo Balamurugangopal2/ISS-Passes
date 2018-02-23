@@ -47,12 +47,12 @@ class PassesListViewModel: NSObject {
     }
     
     func numberofItemsInSection(section: Int) -> Int {
-        return passes?.response.count ?? 0
+        return passes?.response?.count ?? 0
     }
     
     func titleForItemAtIndexPath(indexPath: IndexPath) -> String {
         
-        if let date = passes?.response[indexPath.row].risetime {
+        if let date = passes?.response?[indexPath.row].risetime {
             return Util.getFormatedDate(date: date)
         } else {
             return ""
@@ -60,7 +60,7 @@ class PassesListViewModel: NSObject {
     }
     
     func subTitleForItemAtIndexPath(indexPath: IndexPath) -> String {
-        if let date = passes?.response[indexPath.row].risetime {
+        if let date = passes?.response?[indexPath.row].risetime {
             return Util.getFormatedTime(date: date)
         } else {
             return ""
@@ -81,28 +81,28 @@ class PassesListViewModel: NSObject {
     }
     
     func getLatitude() -> String {
-        if let latitude = passes?.request.latitude {
+        if let latitude = passes?.request?.latitude {
             return "\(latitude)"
         }
         return "0.0"
     }
     
     func getLongitude() -> String {
-        if let longitude = passes?.request.longitude {
+        if let longitude = passes?.request?.longitude {
             return "\(longitude)"
         }
         return "0.0"
     }
     
     func getAltitude() -> String {
-        if let altitude = passes?.request.altitude {
+        if let altitude = passes?.request?.altitude {
             return "\(altitude)"
         }
         return "0.0"
     }
     
     func getNoOfPasses() -> String {
-        if let noOfPasses = passes?.request.passes {
+        if let noOfPasses = passes?.request?.passes {
             return "\(noOfPasses)"
         }
         return "0"

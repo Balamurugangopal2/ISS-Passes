@@ -20,7 +20,6 @@ class Util {
     
     class func getFormatedTime(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "hh:mm:ss a"
         let time = dateFormatter.string(from: date)

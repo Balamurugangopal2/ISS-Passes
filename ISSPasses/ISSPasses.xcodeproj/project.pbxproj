@@ -18,7 +18,6 @@
 		2F58FF542037DDBA0036F15B /* ISSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF532037DDBA0036F15B /* ISSAPIClient.swift */; };
 		2F58FF562037E1EA0036F15B /* CoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF552037E1EA0036F15B /* CoreAPI.swift */; };
 		2F58FF582038822B0036F15B /* Passes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF572038822B0036F15B /* Passes.swift */; };
-		2F58FF5A2039048C0036F15B /* ISSPassesResponse.json in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF592039048C0036F15B /* ISSPassesResponse.json */; };
 		2F58FF5D203914210036F15B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF5C203914210036F15B /* Util.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		2F58FF532037DDBA0036F15B /* ISSAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSAPIClient.swift; sourceTree = "<group>"; };
 		2F58FF552037E1EA0036F15B /* CoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAPI.swift; sourceTree = "<group>"; };
 		2F58FF572038822B0036F15B /* Passes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passes.swift; sourceTree = "<group>"; };
-		2F58FF592039048C0036F15B /* ISSPassesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ISSPassesResponse.json; sourceTree = "<group>"; };
 		2F58FF5C203914210036F15B /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,7 +175,6 @@
 			children = (
 				2F58FF1F2037A8B80036F15B /* Assets.xcassets */,
 				2F58FF242037A8B80036F15B /* Info.plist */,
-				2F58FF592039048C0036F15B /* ISSPassesResponse.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 				2F58FF1B2037A8B80036F15B /* PassesListViewController.swift in Sources */,
 				2F58FF582038822B0036F15B /* Passes.swift in Sources */,
 				2F58FF5D203914210036F15B /* Util.swift in Sources */,
-				2F58FF5A2039048C0036F15B /* ISSPassesResponse.json in Sources */,
 				2F58FF562037E1EA0036F15B /* CoreAPI.swift in Sources */,
 				2F58FF542037DDBA0036F15B /* ISSAPIClient.swift in Sources */,
 				2F58FF192037A8B80036F15B /* AppDelegate.swift in Sources */,

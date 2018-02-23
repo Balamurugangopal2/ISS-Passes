@@ -33,9 +33,12 @@
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PassCell")! // FIXME: use CustomCell
-        configureCell(cell, forRowAt: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PassCell") {
+            configureCell(cell, forRowAt: indexPath)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     func configureCell(_ cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -60,11 +63,13 @@
     }
     
     func requestUserToEnableLocation() {
-        let alertController = UIAlertController(title: "Location Error", message: "ISS Passes needs your location in order to perdict passes for your current location. You can authorize the app in Settings.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("Location Error", comment: "Location Error") , message: NSLocalizedString("ISS Passes needs your location in order to perdict passes for your current location. You can authorize the app in Settings.", comment: "Location Error") , preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { action in
-            UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
+        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: "Settings") , style: .default, handler: { action in
+            if let seetingsUrl = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.openURL(seetingsUrl)
+            }
         })
         alertController.addAction(cancelAction)
         alertController.addAction(settingsAction)
@@ -76,9 +81,9 @@
         var errorMessage = ""
         switch (error) {
         case .ServiceError:
-            errorMessage = "ISS API service failure. Please try again later!"
+            errorMessage = NSLocalizedString("ISS API service failure. Please try again later!", comment: "Service Error")
         case .LocationError:
-            errorMessage = "Location service failure. Please try again later!"
+            errorMessage = NSLocalizedString("Location service failure. Please try again later!", comment: "Location  Error")
         }
         let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)

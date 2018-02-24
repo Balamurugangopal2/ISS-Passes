@@ -52,16 +52,16 @@ class PassesListViewModel: NSObject {
     
     func titleForItemAtIndexPath(indexPath: IndexPath) -> String {
         
-        if let date = passes?.response?[indexPath.row].risetime {
-            return Util.getFormatedDate(date: date)
+        if let time = passes?.response?[indexPath.row].risetime {
+            return Util.getFormatedDate(date: Date(timeIntervalSince1970: time))
         } else {
             return ""
         }
     }
     
     func subTitleForItemAtIndexPath(indexPath: IndexPath) -> String {
-        if let date = passes?.response?[indexPath.row].risetime {
-            return Util.getFormatedTime(date: date)
+        if let time = passes?.response?[indexPath.row].risetime {
+            return Util.getFormatedTime(date: Date(timeIntervalSince1970: time))
         } else {
             return ""
         }

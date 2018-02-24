@@ -24,5 +24,5 @@ struct PassRequest: Decodable {
 
 struct PassResponse: Decodable {
     let duration: Int?
-    let risetime: Date?
+    let risetime: Double?
 }

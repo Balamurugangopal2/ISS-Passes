@@ -11,15 +11,15 @@ import XCTest
 
 class ISSPassesTests: XCTestCase {
     
-    var passesListViewModel: PassesListViewModel?
+    var issPassesListViewModel: IssPassesListViewModel?
     
     override func setUp() {
         super.setUp()
-        passesListViewModel = PassesListViewModel()
+        issPassesListViewModel = IssPassesListViewModel()
         let passRequest = PassRequest(latitude: 41.8717945274356, longitude: -72.6550873742184, altitude: 100, passes: 5, datetime: Date(timeIntervalSince1970: TimeInterval(1518884641)))
         let passResponse1 = PassResponse(duration: 565, risetime: 1518889668)
         let passResponse2 = PassResponse(duration: 605, risetime: 1518895489)
-        passesListViewModel?.passes = Passes(message: "Success", request: passRequest , response: [passResponse1, passResponse2])
+        issPassesListViewModel?.issPasses = IssPasses(message: "Success", request: passRequest , response: [passResponse1, passResponse2])
     }
     
     override func tearDown() {
@@ -28,22 +28,22 @@ class ISSPassesTests: XCTestCase {
     }
     
     func test_getLatidude() {
-        XCTAssertEqual(passesListViewModel?.getLatitude(), "41.8717945274356")
+        XCTAssertEqual(issPassesListViewModel?.getLatitude(), "41.8717945274356")
     }
     
     func test_getAltitude() {
-        XCTAssertEqual(passesListViewModel?.getAltitude(), "100.0")
+        XCTAssertEqual(issPassesListViewModel?.getAltitude(), "100.0")
     }
     
     func test_getLongitude() {
-        XCTAssertEqual(passesListViewModel?.getLongitude(), "-72.6550873742184")
+        XCTAssertEqual(issPassesListViewModel?.getLongitude(), "-72.6550873742184")
     }
     
     func test_getNoOfPasses() {
-        XCTAssertEqual(passesListViewModel?.getNoOfPasses(), "5")
+        XCTAssertEqual(issPassesListViewModel?.getNoOfPasses(), "5")
     }
     
     func test_numberofItemsInSection() {
-        XCTAssertEqual(passesListViewModel?.numberofItemsInSection(section: 0), 2)
+        XCTAssertEqual(issPassesListViewModel?.numberofItemsInSection(section: 0), 2)
     }
 }

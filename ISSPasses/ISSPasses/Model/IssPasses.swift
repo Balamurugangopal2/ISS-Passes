@@ -8,21 +8,27 @@
 
 import Foundation
 
-struct Passes: Decodable {
+struct IssPasses: Decodable {
+    
     let message: String?
     let request: PassRequest?
     let response: [PassResponse]?
+    
 }
 
 struct PassRequest: Decodable {
+    
     let latitude: Double?
     let longitude: Double?
     let altitude: Double?
     let passes: Int?
     let datetime: Date?
+    
 }
 
 struct PassResponse: Decodable {
+    
     let duration: Int?
     let risetime: Double?
+    
 }

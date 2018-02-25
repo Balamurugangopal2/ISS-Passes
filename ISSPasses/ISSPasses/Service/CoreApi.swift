@@ -1,5 +1,5 @@
 //
-//  CoreAPI.swift
+//  CoreApi.swift
 //  ISSPasses
 //
 //  Created by Balamurugan Gopal on 2/16/18.
@@ -8,15 +8,17 @@
 
 import Foundation
 
-enum HTTPType: String {
+enum HttpType: String {
+    
     case GET = "GET"
     case POST = "POST"
     case PUT = "PUT"
+    
 }
 
 // Singleton class handles the network communications
-class CoreAPI {
-    public static let shared: CoreAPI = CoreAPI()
+class CoreApi {
+    public static let shared: CoreApi = CoreApi()
     
     private init() {
         

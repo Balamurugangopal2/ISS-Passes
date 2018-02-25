@@ -15,7 +15,7 @@
         <!--ISS Passes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PassesListViewController" customModule="ISSPasses" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IssPassesListViewController" customModule="ISSPasses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" alpha="0.5" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="uSW-Yx-ksD" customClass="PassesListViewModel" customModule="ISSPasses" customModuleProvider="target"/>
+                <customObject id="uSW-Yx-ksD" customClass="IssPassesListViewModel" customModule="ISSPasses" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="424.80000000000001" y="-15.742128935532236"/>
         </scene>

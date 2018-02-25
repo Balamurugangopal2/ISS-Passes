@@ -14,16 +14,16 @@ class Util {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "MMM dd, yyyy"
-        let strDate = dateFormatter.string(from: date)
-        return strDate
+        let dateString = dateFormatter.string(from: date)
+        return dateString
     }
     
     class func getFormatedTime(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "hh:mm:ss a"
-        let time = dateFormatter.string(from: date)
-        return time
+        let timeString = dateFormatter.string(from: date)
+        return timeString
     }
     
 }

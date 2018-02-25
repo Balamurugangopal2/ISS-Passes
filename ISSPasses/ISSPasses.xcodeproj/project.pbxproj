@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2F58FF192037A8B80036F15B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF182037A8B80036F15B /* AppDelegate.swift */; };
-		2F58FF1B2037A8B80036F15B /* PassesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF1A2037A8B80036F15B /* PassesListViewController.swift */; };
+		2F58FF1B2037A8B80036F15B /* IssPassesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF1A2037A8B80036F15B /* IssPassesListViewController.swift */; };
 		2F58FF1E2037A8B80036F15B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F58FF1C2037A8B80036F15B /* Main.storyboard */; };
 		2F58FF202037A8B80036F15B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F58FF1F2037A8B80036F15B /* Assets.xcassets */; };
 		2F58FF232037A8B80036F15B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F58FF212037A8B80036F15B /* LaunchScreen.storyboard */; };
 		2F58FF2E2037A8B90036F15B /* ISSPassesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF2D2037A8B90036F15B /* ISSPassesTests.swift */; };
 		2F58FF392037A8B90036F15B /* ISSPassesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF382037A8B90036F15B /* ISSPassesUITests.swift */; };
-		2F58FF522037B9400036F15B /* PassesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF512037B9400036F15B /* PassesListViewModel.swift */; };
-		2F58FF542037DDBA0036F15B /* ISSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF532037DDBA0036F15B /* ISSAPIClient.swift */; };
-		2F58FF562037E1EA0036F15B /* CoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF552037E1EA0036F15B /* CoreAPI.swift */; };
-		2F58FF582038822B0036F15B /* Passes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF572038822B0036F15B /* Passes.swift */; };
+		2F58FF522037B9400036F15B /* IssPassesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF512037B9400036F15B /* IssPassesListViewModel.swift */; };
+		2F58FF542037DDBA0036F15B /* IssApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF532037DDBA0036F15B /* IssApi.swift */; };
+		2F58FF562037E1EA0036F15B /* CoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF552037E1EA0036F15B /* CoreApi.swift */; };
+		2F58FF582038822B0036F15B /* IssPasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF572038822B0036F15B /* IssPasses.swift */; };
 		2F58FF5D203914210036F15B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF5C203914210036F15B /* Util.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		2F58FF152037A8B80036F15B /* ISSPasses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISSPasses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F58FF182037A8B80036F15B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F58FF1A2037A8B80036F15B /* PassesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListViewController.swift; sourceTree = "<group>"; };
+		2F58FF1A2037A8B80036F15B /* IssPassesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssPassesListViewController.swift; sourceTree = "<group>"; };
 		2F58FF1D2037A8B80036F15B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F58FF1F2037A8B80036F15B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F58FF222037A8B80036F15B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,10 +52,10 @@
 		2F58FF342037A8B90036F15B /* ISSPassesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISSPassesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F58FF382037A8B90036F15B /* ISSPassesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSPassesUITests.swift; sourceTree = "<group>"; };
 		2F58FF3A2037A8B90036F15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F58FF512037B9400036F15B /* PassesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesListViewModel.swift; sourceTree = "<group>"; };
-		2F58FF532037DDBA0036F15B /* ISSAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSAPIClient.swift; sourceTree = "<group>"; };
-		2F58FF552037E1EA0036F15B /* CoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAPI.swift; sourceTree = "<group>"; };
-		2F58FF572038822B0036F15B /* Passes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passes.swift; sourceTree = "<group>"; };
+		2F58FF512037B9400036F15B /* IssPassesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssPassesListViewModel.swift; sourceTree = "<group>"; };
+		2F58FF532037DDBA0036F15B /* IssApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssApi.swift; sourceTree = "<group>"; };
+		2F58FF552037E1EA0036F15B /* CoreApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApi.swift; sourceTree = "<group>"; };
+		2F58FF572038822B0036F15B /* IssPasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssPasses.swift; sourceTree = "<group>"; };
 		2F58FF5C203914210036F15B /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 		2F58FF462037A9330036F15B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2F58FF572038822B0036F15B /* Passes.swift */,
+				2F58FF572038822B0036F15B /* IssPasses.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 		2F58FF482037A9E70036F15B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2F58FF512037B9400036F15B /* PassesListViewModel.swift */,
+				2F58FF512037B9400036F15B /* IssPassesListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 		2F58FF4A2037AA070036F15B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2F58FF1A2037A8B80036F15B /* PassesListViewController.swift */,
+				2F58FF1A2037A8B80036F15B /* IssPassesListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -182,8 +182,8 @@
 		2F58FF4E2037AD790036F15B /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2F58FF532037DDBA0036F15B /* ISSAPIClient.swift */,
-				2F58FF552037E1EA0036F15B /* CoreAPI.swift */,
+				2F58FF532037DDBA0036F15B /* IssApi.swift */,
+				2F58FF552037E1EA0036F15B /* CoreApi.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -330,12 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F58FF522037B9400036F15B /* PassesListViewModel.swift in Sources */,
-				2F58FF1B2037A8B80036F15B /* PassesListViewController.swift in Sources */,
-				2F58FF582038822B0036F15B /* Passes.swift in Sources */,
+				2F58FF522037B9400036F15B /* IssPassesListViewModel.swift in Sources */,
+				2F58FF1B2037A8B80036F15B /* IssPassesListViewController.swift in Sources */,
+				2F58FF582038822B0036F15B /* IssPasses.swift in Sources */,
 				2F58FF5D203914210036F15B /* Util.swift in Sources */,
-				2F58FF562037E1EA0036F15B /* CoreAPI.swift in Sources */,
-				2F58FF542037DDBA0036F15B /* ISSAPIClient.swift in Sources */,
+				2F58FF562037E1EA0036F15B /* CoreApi.swift in Sources */,
+				2F58FF542037DDBA0036F15B /* IssApi.swift in Sources */,
 				2F58FF192037A8B80036F15B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

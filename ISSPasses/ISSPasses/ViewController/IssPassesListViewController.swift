@@ -1,5 +1,5 @@
  //
- //  PassesListViewController.swift
+ //  IssPassesListViewController.swift
  //  ISSPasses
  //
  //  Created by Balamurugan Gopal on 2/16/18.
@@ -8,9 +8,9 @@
  
  import UIKit
  
- class PassesListViewController: UIViewController {
+ class IssPassesListViewController: UIViewController {
     
-    @IBOutlet var viewModel: PassesListViewModel!
+    @IBOutlet var viewModel: IssPassesListViewModel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var latitudeValueLabel: UILabel!
     @IBOutlet weak var longitudeValueLabel: UILabel!
@@ -26,7 +26,7 @@
     
  }
  
- extension PassesListViewController: UITableViewDataSource {
+ extension IssPassesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberofItemsInSection(section: section)
@@ -48,9 +48,9 @@
     
  }
  
- extension PassesListViewController: PassesListViewDelegate {
+ extension IssPassesListViewController: IssPassesListViewDelegate {
 
-    func updatePassesList() {
+    func updateIssPassesList() {
         DispatchQueue.main.async { [weak self] in
             self?.latitudeValueLabel.text = self?.viewModel.getLatitude()
             self?.longitudeValueLabel.text = self?.viewModel.getLongitude()
@@ -67,8 +67,8 @@
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
         let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: "Settings") , style: .default, handler: { action in
-            if let seetingsUrl = URL(string: UIApplicationOpenSettingsURLString) {
-                UIApplication.shared.openURL(seetingsUrl)
+            if let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.openURL(settingsUrl)
             }
         })
         alertController.addAction(cancelAction)
@@ -77,7 +77,7 @@
         self.loadingIndicator.stopAnimating()
     }
     
-    func handleError(error: PassesListError) {
+    func handleError(error: IssPassesListError) {
         var errorMessage = ""
         switch (error) {
         case .ServiceError:
@@ -85,8 +85,8 @@
         case .LocationError:
             errorMessage = NSLocalizedString("Location service failure. Please try again later!", comment: "Location  Error")
         }
-        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "Error"), message: errorMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .cancel, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
         self.loadingIndicator.stopAnimating()

@@ -1,5 +1,5 @@
 //
-//  PassesListViewModel.swift
+//  IssPassesListViewModel.swift
 //  ISSPasses
 //
 //  Created by Balamurugan Gopal on 2/16/18.
@@ -10,32 +10,35 @@ import Foundation
 import CoreLocation
 
 // TODO: presenlty just handled 2 common errors and need to handle specific service errors
-enum PassesListError: Error {
+enum IssPassesListError: Error {
+    
     case ServiceError
     case LocationError
+    
 }
 
-protocol PassesListViewDelegate: class {
+protocol IssPassesListViewDelegate: class {
+    
     // This delegate method will invoked once device gets Passes and delegate class should implement this method to update UI
-    func updatePassesList()
+    func updateIssPassesList()
     // This delegate method to ask user to enable location service
     func requestUserToEnableLocation()
     //This delegate method to display error
-    func handleError(error: PassesListError)
+    func handleError(error: IssPassesListError)
+    
 }
 
-class PassesListViewModel: NSObject {
+class IssPassesListViewModel: NSObject {
     
-    let apiClient: ISSAPIClient = ISSAPIClient()
-    var passes: Passes?
-    weak var delegate: PassesListViewDelegate?
+    let issApi : IssApi = IssApi()
+    var issPasses: IssPasses?
+    weak var delegate: IssPassesListViewDelegate?
     let locationManager = CLLocationManager()
     var latitude = 0.0
     var longitude = 0.0
     
     func getCurrentLocation() {
         locationManager.delegate = self
-        
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .denied {
                 self.delegate?.requestUserToEnableLocation()
@@ -47,12 +50,11 @@ class PassesListViewModel: NSObject {
     }
     
     func numberofItemsInSection(section: Int) -> Int {
-        return passes?.response?.count ?? 0
+        return issPasses?.response?.count ?? 0
     }
     
     func titleForItemAtIndexPath(indexPath: IndexPath) -> String {
-        
-        if let time = passes?.response?[indexPath.row].risetime {
+        if let time = issPasses?.response?[indexPath.row].risetime {
             return Util.getFormatedDate(date: Date(timeIntervalSince1970: time))
         } else {
             return ""
@@ -60,7 +62,7 @@ class PassesListViewModel: NSObject {
     }
     
     func subTitleForItemAtIndexPath(indexPath: IndexPath) -> String {
-        if let time = passes?.response?[indexPath.row].risetime {
+        if let time = issPasses?.response?[indexPath.row].risetime {
             return Util.getFormatedTime(date: Date(timeIntervalSince1970: time))
         } else {
             return ""
@@ -68,41 +70,41 @@ class PassesListViewModel: NSObject {
     }
     
     func fetchPasses(completion: @escaping ()->()) {
-        //Latitude and Longitue needs to passed to ISSPassesAPI to get the pass details
+        //Latitude and Longitue needs to be passed to ISS Passes API to get the passes details
         let parameter = "lat=\(latitude)&lon=\(longitude)"
-        apiClient.fetchISSPassesList(parameter: parameter) { (passes) in
-            if (passes ==  nil) {
+        issApi.fetchIssPassesList(parameter: parameter) { (issPasses, error) in
+            if (error !=  nil) {
                 self.delegate?.handleError(error: .ServiceError)
             } else {
-                self.passes = passes
+                self.issPasses = issPasses
                 completion()
             }
         }
     }
     
     func getLatitude() -> String {
-        if let latitude = passes?.request?.latitude {
+        if let latitude = issPasses?.request?.latitude {
             return "\(latitude)"
         }
         return "0.0"
     }
     
     func getLongitude() -> String {
-        if let longitude = passes?.request?.longitude {
+        if let longitude = issPasses?.request?.longitude {
             return "\(longitude)"
         }
         return "0.0"
     }
     
     func getAltitude() -> String {
-        if let altitude = passes?.request?.altitude {
+        if let altitude = issPasses?.request?.altitude {
             return "\(altitude)"
         }
         return "0.0"
     }
     
     func getNoOfPasses() -> String {
-        if let noOfPasses = passes?.request?.passes {
+        if let noOfPasses = issPasses?.request?.passes {
             return "\(noOfPasses)"
         }
         return "0"
@@ -110,15 +112,15 @@ class PassesListViewModel: NSObject {
     
 }
 
-extension PassesListViewModel: CLLocationManagerDelegate {
+extension IssPassesListViewModel: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let latitude = locations.last?.coordinate.latitude, let longitude = locations.last?.coordinate.longitude {
             self.latitude = latitude
             self.longitude = longitude
-            //Once lattitue and longitude available the invok the ISS API client calls
+            //Once lattitue and longitude available then invoke the ISS Passes API
             fetchPasses { [weak self] in
-                self?.delegate?.updatePassesList()
+                self?.delegate?.updateIssPassesList()
             }
         }
     }

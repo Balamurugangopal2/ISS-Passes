@@ -56,8 +56,9 @@ class ISSPassesTests: XCTestCase {
         let parameter = "lat=\(latitude)&lon=\(longitude)"
         issPassesListViewModel?.issApi.fetchIssPassesList(parameter: parameter, completion: { (issPassesList, error) in
             XCTAssertNotNil(issPassesList)
+            XCTAssertNil(error)
             expectation.fulfill()
         })
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 2)
     }
 }

@@ -13,7 +13,7 @@ let issPassesUrlString = "http://api.open-notify.org/iss-pass.json?"
 // TODO: Add other API methods to implement functionality provided by ISS API
 class IssApi {
     
-    typealias PassesResult = (IssPasses?, IssPassesListError?) -> ()
+    typealias PassesResult = (IssPasses?, IssPassesListError?) -> Void
     
     func fetchIssPassesList(parameter: String?, completion: @escaping PassesResult) {
         guard let parameter = parameter else {

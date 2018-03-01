@@ -19,7 +19,7 @@ class ISSPassesTests: XCTestCase {
         let passRequest = PassRequest(latitude: 41.8717945274356, longitude: -72.6550873742184, altitude: 100, passes: 5, datetime: Date(timeIntervalSince1970: TimeInterval(1518884641)))
         let passResponse1 = PassResponse(duration: 565, risetime: 1518889668)
         let passResponse2 = PassResponse(duration: 605, risetime: 1518895489)
-        issPassesListViewModel?.issPasses = IssPasses(message: "Success", request: passRequest , response: [passResponse1, passResponse2])
+        issPassesListViewModel?.issPasses = IssPasses(message: "Success", request: passRequest, response: [passResponse1, passResponse2])
     }
     
     override func tearDown() {

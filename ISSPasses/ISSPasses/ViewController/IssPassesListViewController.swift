@@ -1,10 +1,10 @@
- //
- //  IssPassesListViewController.swift
- //  ISSPasses
- //
- //  Created by Balamurugan Gopal on 2/16/18.
- //  Copyright © 2018 Balamurugan Gopal. All rights reserved.
- //
+//
+//  IssPassesListViewController.swift
+//  ISSPasses
+//
+//  Created by Balamurugan Gopal on 2/16/18.
+//  Copyright © 2018 Balamurugan Gopal. All rights reserved.
+//
  
  import UIKit
  
@@ -64,10 +64,10 @@
     
     func requestUserToEnableLocation() {
         let message = NSLocalizedString("ISS Passes needs your location in order to perdict passes for your current location. You can authorize the app in Settings.", comment: "")
-        let alertController = UIAlertController(title: NSLocalizedString("Location Error", comment: "Location Error"), message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("Location Error", comment: ""), message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
-        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: "Settings") , style: .default, handler: { action in
+        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: "Settings"), style: .default, handler: { _ in
             if let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) {
                 UIApplication.shared.openURL(settingsUrl)
             }
@@ -80,7 +80,7 @@
     
     func handleError(error: IssPassesListError) {
         var errorMessage = ""
-        switch (error) {
+        switch error {
         case .serviceError:
             errorMessage = NSLocalizedString("ISS API service failure. Please try again later!", comment: "Service Error")
         case .locationError:

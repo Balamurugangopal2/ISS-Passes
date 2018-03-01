@@ -1,5 +1,5 @@
 //
-//  PassesModel.swift
+//  IssPasses.swift
 //  ISSPasses
 //
 //  Created by Balamurugan Gopal on 2/17/18.

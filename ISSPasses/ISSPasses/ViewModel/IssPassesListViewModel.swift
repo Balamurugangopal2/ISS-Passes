@@ -30,7 +30,7 @@ protocol IssPassesListViewDelegate: class {
 
 class IssPassesListViewModel: NSObject {
     
-    let issApi : IssApi = IssApi()
+    let issApi = IssApi()
     var issPasses: IssPasses?
     weak var delegate: IssPassesListViewDelegate?
     let locationManager = CLLocationManager()
@@ -69,11 +69,11 @@ class IssPassesListViewModel: NSObject {
         }
     }
     
-    func fetchPasses(completion: @escaping ()->()) {
+    func fetchPasses(completion: @escaping () -> Void) {
         //Latitude and Longitue needs to be passed to ISS Passes API to get the passes details
         let parameter = "lat=\(latitude)&lon=\(longitude)"
         issApi.fetchIssPassesList(parameter: parameter) { (issPasses, error) in
-            if (error !=  nil) {
+            if error !=  nil {
                 self.delegate?.handleError(error: .serviceError)
             } else {
                 self.issPasses = issPasses

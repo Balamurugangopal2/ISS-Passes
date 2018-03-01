@@ -21,6 +21,7 @@
 		2F58FF562037E1EA0036F15B /* CoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF552037E1EA0036F15B /* CoreApi.swift */; };
 		2F58FF582038822B0036F15B /* IssPasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF572038822B0036F15B /* IssPasses.swift */; };
 		2F58FF5D203914210036F15B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58FF5C203914210036F15B /* Util.swift */; };
+		2FF5A18F20478F420040EFCB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5A18E20478F420040EFCB /* .swiftlint.yml */; };
 		574E736F20A5C31660A08B2C /* Pods_ISSPassesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555F63B06CD7D39B114B138E /* Pods_ISSPassesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		2F58FF572038822B0036F15B /* IssPasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssPasses.swift; sourceTree = "<group>"; };
 		2F58FF5C203914210036F15B /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		2FA9617B6D7644E22DEB4EBF /* Pods-ISSPasses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISSPasses.release.xcconfig"; path = "Pods/Target Support Files/Pods-ISSPasses/Pods-ISSPasses.release.xcconfig"; sourceTree = "<group>"; };
+		2FF5A18E20478F420040EFCB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .swiftlint.yml; path = ../../.swiftlint.yml; sourceTree = "<group>"; };
 		3461387156749C33F5BFDFE7 /* Pods-ISSPassesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISSPassesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ISSPassesUITests/Pods-ISSPassesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		47E6E25638405E8E4FE9AC0E /* Pods-ISSPasses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISSPasses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ISSPasses/Pods-ISSPasses.debug.xcconfig"; sourceTree = "<group>"; };
 		555F63B06CD7D39B114B138E /* Pods_ISSPassesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISSPassesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				2F58FF1F2037A8B80036F15B /* Assets.xcassets */,
+				2FF5A18E20478F420040EFCB /* .swiftlint.yml */,
 				2F58FF242037A8B80036F15B /* Info.plist */,
 			);
 			path = Resource;
@@ -352,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF5A18F20478F420040EFCB /* .swiftlint.yml in Resources */,
 				2F58FF232037A8B80036F15B /* LaunchScreen.storyboard in Resources */,
 				2F58FF202037A8B80036F15B /* Assets.xcassets in Resources */,
 				2F58FF1E2037A8B80036F15B /* Main.storyboard in Resources */,

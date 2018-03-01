@@ -52,13 +52,16 @@
 
     func updateIssPassesList() {
         DispatchQueue.main.async { [weak self] in
-            self?.latitudeValueLabel.text = self?.viewModel.getLatitude()
-            self?.longitudeValueLabel.text = self?.viewModel.getLongitude()
-            self?.altitudeValueLabel.text = self?.viewModel.getAltitude()
-            self?.noOfPassesLabel.text = self?.viewModel.getNoOfPasses()
-            self?.tableView.reloadData()
-            self?.loadingIndicator.stopAnimating()
-            self?.view.alpha = 1
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.latitudeValueLabel.text = self?.viewModel.getLatitude()
+            strongSelf.longitudeValueLabel.text = self?.viewModel.getLongitude()
+            strongSelf.altitudeValueLabel.text = self?.viewModel.getAltitude()
+            strongSelf.noOfPassesLabel.text = self?.viewModel.getNoOfPasses()
+            strongSelf.tableView.reloadData()
+            strongSelf.loadingIndicator.stopAnimating()
+            strongSelf.view.alpha = 1
         }
     }
     
@@ -89,8 +92,10 @@
         let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "Error"), message: errorMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .cancel, handler: nil)
         alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
-        self.loadingIndicator.stopAnimating()
+        DispatchQueue.main.sync { [weak self] in
+            self?.present(alertController, animated: true, completion: nil)
+            self?.loadingIndicator.stopAnimating()
+        }
     }
     
  }

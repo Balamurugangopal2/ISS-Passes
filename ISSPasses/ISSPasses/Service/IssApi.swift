@@ -29,10 +29,10 @@ class IssApi {
                     let passes = try JSONDecoder().decode(IssPasses.self, from: data)
                     completion(passes, nil)
                 } else {
-                    completion(nil, .ServiceError)
+                    completion(nil, .serviceError)
                 }
             } catch {
-                completion(nil, .ServiceError)
+                completion(nil, .serviceError)
             }
         }
     }

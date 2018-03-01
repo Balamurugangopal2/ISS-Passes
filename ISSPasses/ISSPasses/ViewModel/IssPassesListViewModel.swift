@@ -12,8 +12,8 @@ import CoreLocation
 // TODO: presenlty just handled 2 common errors and need to handle specific service errors
 enum IssPassesListError: Error {
     
-    case ServiceError
-    case LocationError
+    case serviceError
+    case locationError
     
 }
 
@@ -74,7 +74,7 @@ class IssPassesListViewModel: NSObject {
         let parameter = "lat=\(latitude)&lon=\(longitude)"
         issApi.fetchIssPassesList(parameter: parameter) { (issPasses, error) in
             if (error !=  nil) {
-                self.delegate?.handleError(error: .ServiceError)
+                self.delegate?.handleError(error: .serviceError)
             } else {
                 self.issPasses = issPasses
                 completion()
@@ -126,7 +126,7 @@ extension IssPassesListViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        self.delegate?.handleError(error: .LocationError)
+        self.delegate?.handleError(error: .locationError)
         NSLog("\(error.localizedDescription)")
     }
     

@@ -63,7 +63,8 @@
     }
     
     func requestUserToEnableLocation() {
-        let alertController = UIAlertController(title: NSLocalizedString("Location Error", comment: "Location Error") , message: NSLocalizedString("ISS Passes needs your location in order to perdict passes for your current location. You can authorize the app in Settings.", comment: "Location Error") , preferredStyle: .alert)
+        let message = NSLocalizedString("ISS Passes needs your location in order to perdict passes for your current location. You can authorize the app in Settings.", comment: "Location Error Message")
+        let alertController = UIAlertController(title: NSLocalizedString("Location Error", comment: "Location Error") , message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
         let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: "Settings") , style: .default, handler: { action in
@@ -80,9 +81,9 @@
     func handleError(error: IssPassesListError) {
         var errorMessage = ""
         switch (error) {
-        case .ServiceError:
+        case .serviceError:
             errorMessage = NSLocalizedString("ISS API service failure. Please try again later!", comment: "Service Error")
-        case .LocationError:
+        case .locationError:
             errorMessage = NSLocalizedString("Location service failure. Please try again later!", comment: "Location  Error")
         }
         let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "Error"), message: errorMessage, preferredStyle: .alert)

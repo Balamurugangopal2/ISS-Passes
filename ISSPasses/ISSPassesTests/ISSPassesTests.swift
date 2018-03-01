@@ -46,4 +46,18 @@ class ISSPassesTests: XCTestCase {
     func test_numberofItemsInSection() {
         XCTAssertEqual(issPassesListViewModel?.numberofItemsInSection(section: 0), 2)
     }
+    
+    func test_fetchIssPassesList() {
+        let expectation = XCTestExpectation(description: "fetchPassesCompletion")
+        guard let latitude = issPassesListViewModel?.getLatitude(), let longitude = issPassesListViewModel?.getLongitude() else {
+            XCTAssert(false)
+            return
+        }
+        let parameter = "lat=\(latitude)&lon=\(longitude)"
+        issPassesListViewModel?.issApi.fetchIssPassesList(parameter: parameter, completion: { (issPassesList, error) in
+            XCTAssertNotNil(issPassesList)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 5)
+    }
 }

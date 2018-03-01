@@ -252,6 +252,7 @@
 				2F58FF132037A8B80036F15B /* Resources */,
 				8CC98EEB9EAAE766D6BBED35 /* [CP] Embed Pods Frameworks */,
 				DF7F3B4E50886B9FC4752E00 /* [CP] Copy Pods Resources */,
+				2F5276382047A1150042165F /* SwiftLint Run Script */,
 			);
 			buildRules = (
 			);
@@ -393,6 +394,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ISSPassesTests/Pods-ISSPassesTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		2F5276382047A1150042165F /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		392CE2A311407E63FEEF91FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

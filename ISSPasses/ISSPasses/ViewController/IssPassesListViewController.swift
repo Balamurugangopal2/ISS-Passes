@@ -63,8 +63,8 @@
     }
     
     func requestUserToEnableLocation() {
-        let message = NSLocalizedString("ISS Passes needs your location in order to perdict passes for your current location. You can authorize the app in Settings.", comment: "Location Error Message")
-        let alertController = UIAlertController(title: NSLocalizedString("Location Error", comment: "Location Error") , message: message, preferredStyle: .alert)
+        let message = NSLocalizedString("ISS Passes needs your location in order to perdict passes for your current location. You can authorize the app in Settings.", comment: "")
+        let alertController = UIAlertController(title: NSLocalizedString("Location Error", comment: "Location Error"), message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
         let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: "Settings") , style: .default, handler: { action in
